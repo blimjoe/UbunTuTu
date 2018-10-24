@@ -27,6 +27,14 @@ public:
             QProcess::start(program, args);
         }
 
+        Q_INVOKABLE bool waitForFinished() {
+           return QProcess::waitForFinished();
+        }
+
+        Q_INVOKABLE int status() {
+           return QProcess::ExitStatus();
+        }
+
         Q_INVOKABLE QByteArray readAll() {
             return QProcess::readAll();
         }
